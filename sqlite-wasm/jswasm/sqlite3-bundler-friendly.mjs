@@ -101,7 +101,7 @@ var sqlite3InitModule = (() => {
       if (_scriptDir) {
         scriptDirectory = _scriptDir;
       }
-      if (scriptDirectory.indexOf('blob:') !== 0) {
+      if (typeof scriptDirectory === 'string' && scriptDirectory.indexOf('blob:') !== 0) {
         scriptDirectory = scriptDirectory.substr(0, scriptDirectory.replace(/[?#].*/, '').lastIndexOf('/') + 1);
       } else {
         scriptDirectory = '';
@@ -10135,4 +10135,3 @@ const toExportForESM = function () {
 }();
 sqlite3InitModule = toExportForESM;
 export default sqlite3InitModule;
-
