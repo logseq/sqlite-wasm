@@ -9866,6 +9866,7 @@ var sqlite3InitModule = (() => {
                 recursive: true
               });
               _classPrivateFieldSet(this, _dhVfsRoot, _classPrivateFieldSet(this, _dhVfsParent, undefined));
+              delete initPromises[this.vfsName];
             } catch (e) {
               sqlite3.config.error(this.vfsName, 'removeVfs() failed:', e);
             }
@@ -10021,9 +10022,9 @@ var sqlite3InitModule = (() => {
           if (0 && 2 === ++instanceCounter) {
             throw new Error('Just testing rejection.');
           }
-          // if (initPromises[vfsName]) {
-          //   return initPromises[vfsName];
-          // }
+          if (initPromises[vfsName]) {
+            return initPromises[vfsName];
+          }
           if (!globalThis.FileSystemHandle || !globalThis.FileSystemDirectoryHandle || !globalThis.FileSystemFileHandle || !globalThis.FileSystemFileHandle.prototype.createSyncAccessHandle || !navigator?.storage?.getDirectory) {
             return initPromises[vfsName] = Promise.reject(new Error('Missing required OPFS APIs.'));
           }
