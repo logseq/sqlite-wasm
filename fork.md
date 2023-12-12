@@ -3,7 +3,7 @@
    ```shell
    npx babel ./sqlite-wasm/jswasm/sqlite3-bundler-friendly.mjs > ./sqlite-wasm/jswasm/sqlite3-bundler-friendly.mjs
    ```
-2. comment line `delete xcvPart.get(typeName)`, this may cause bugs.
+2. change `delete xcvPart.get(typeName)` to `delete xcvPart[typeName])`
    Error: Invalid delete operand. Only properties can be deleted.
 3. Replace `import.meta.url` with `Module['url']`
    https://github.com/tiensonqin/sqlite-wasm/commit/e581a09bc2648b7e69bfbee25bbb27188c696580
