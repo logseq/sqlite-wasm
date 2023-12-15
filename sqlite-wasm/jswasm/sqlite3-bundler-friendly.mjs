@@ -9866,7 +9866,7 @@ var sqlite3InitModule = (() => {
                 recursive: true
               });
               _classPrivateFieldSet(this, _dhVfsRoot, _classPrivateFieldSet(this, _dhVfsParent, undefined));
-              delete initPromises[this.vfsName];
+              delete initPromises[this.vfsName]
             } catch (e) {
               sqlite3.config.error(this.vfsName, 'removeVfs() failed:', e);
             }
@@ -9997,6 +9997,8 @@ var sqlite3InitModule = (() => {
           unlink(filename) {
             return _classPrivateFieldGet(this, _p).deletePath(filename);
           }
+          releaseAccessHandles() {
+            return _classPrivateFieldGet(this, _p).releaseAccessHandles();
           async removeVfs() {
             return _classPrivateFieldGet(this, _p).removeVfs();
           }
