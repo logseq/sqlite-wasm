@@ -1,6 +1,6 @@
 {
   "name": "@logseq/sqlite-wasm",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "SQLite Wasm conveniently wrapped as an ES Module.",
   "keywords": [
     "sqlite",

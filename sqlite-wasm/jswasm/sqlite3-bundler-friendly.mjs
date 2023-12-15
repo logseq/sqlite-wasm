@@ -9999,6 +9999,7 @@ var sqlite3InitModule = (() => {
           }
           releaseAccessHandles() {
             return _classPrivateFieldGet(this, _p).releaseAccessHandles();
+          }
           async removeVfs() {
             return _classPrivateFieldGet(this, _p).removeVfs();
           }
